@@ -1,3 +1,5 @@
+package main
+
 //import any go packages needed?
 
 // create anscombe data frame
