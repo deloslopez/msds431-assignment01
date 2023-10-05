@@ -1,12 +1,13 @@
 package main
 
 import (
+	"fmt"
 	"testing"
 
 	"github.com/montanaflynn/stats"
 )
 
-func LinRegTest(t *testing.T) {
+func main(t *testing.T) {
 	// add the quartets again
 	dataxy1 := []stats.Coordinate{
 		{X: 10, Y: 8.04},
@@ -64,5 +65,20 @@ func LinRegTest(t *testing.T) {
 		{X: 8, Y: 6.89},
 	}
 	//pass the linear regression and the results should match the output in the main file
+	q1, _ := stats.LinearRegression(dataxy1)
+	fmt.Println(q1)
 
+	q2, _ := stats.LinearRegression(dataxy2)
+	fmt.Println(q2)
+
+	q3, _ := stats.LinearRegression(dataxy3)
+	fmt.Println(q3)
+
+	q4, _ := stats.LinearRegression(dataxy4)
+	fmt.Println(q4)
+
+	//unsure how to do a boolean with expect results that is an array?
+	// results of first linear regression are this:
+	// [{10 8.001000000000001} {8 7.000818181818185} {13 9.501272727272724} {9 7.500909090909093} {11 8.501090909090909} {14 10.001363636363633} {6 6.000636363636369} {4 5.000454545454553} {12 9.001181818181816} {7 6.500727272727277} {5 5.5005454545454615}]
+	// what would this output be? an array? a list of a list?
 }
