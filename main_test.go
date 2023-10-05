@@ -1,17 +1,13 @@
 package main
 
-//Import FMT and Stats package from Montana Flynn
-
 import (
-	"fmt"
+	"testing"
 
 	"github.com/montanaflynn/stats"
 )
 
-// main function
-func main() {
-	// use stats.coordinate to make the four data series seen in the python and r code
-	// quartet 1
+func LinRegTest(t *testing.T) {
+	// add the quartets again
 	dataxy1 := []stats.Coordinate{
 		{X: 10, Y: 8.04},
 		{X: 8, Y: 6.95},
@@ -67,17 +63,6 @@ func main() {
 		{X: 8, Y: 7.91},
 		{X: 8, Y: 6.89},
 	}
+	//pass the linear regression and the results should match the output in the main file
 
-	//linear regression for each quartet
-	q1, _ := stats.LinearRegression(dataxy1)
-	fmt.Println(q1)
-
-	q2, _ := stats.LinearRegression(dataxy2)
-	fmt.Println(q2)
-
-	q3, _ := stats.LinearRegression(dataxy3)
-	fmt.Println(q3)
-
-	q4, _ := stats.LinearRegression(dataxy4)
-	fmt.Println(q4)
 }
